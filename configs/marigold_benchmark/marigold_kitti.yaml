@@ -1,0 +1,31 @@
+dataset: KITTIImgDataset
+dataset_params:
+  dir: /mnt/pfs/data/RGBD/marigold_eval/kitti/kitti_sampled_val_800.tar
+  disp_name: kitti_depth_val800_from_eigen_train
+  filenames: dataset/kittiImg/eigen_val_from_train_800.txt
+  kitti_bm_crop: true
+  valid_mask_crop: eigen
+
+model_name: "Marigold"
+model_params:
+  model_dir: "/mnt/pfs/users/sunyangtian/Depth/Marigold"
+  ckpt_path: "/mnt/pfs/share/pretrained_model/marigold-depth-v1-1"
+  denoise_steps: 1
+  ensemble_size: 1
+  half_precision: False
+  processing_res: 0
+  output_processing_res: False
+  resample_method: bilinear
+  # seed: None
+  color_map: Spectral
+
+eval_depth:
+  metric_names: 
+    - 'Abs Rel'
+    - 'delta < 1.25'
+    - 'delta < 1.25^2'
+    - 'delta < 1.25^3'
+  depth_alignment: "lstsq"
+
+vis_depth: True
+save_dir: debug_image_kitti

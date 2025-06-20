@@ -1,0 +1,29 @@
+dataset: DIODEImgDataset
+dataset_params:
+  dir: /mnt/pfs/data/RGBD/marigold_eval/diode/diode_val.tar
+  disp_name: diode_depth_val_all
+  filenames: dataset/diodeImg/diode_val_all_filename_list.txt
+
+model_name: "Marigold"
+model_params:
+  model_dir: "/mnt/pfs/users/sunyangtian/Depth/Marigold"
+  ckpt_path: "/mnt/pfs/share/pretrained_model/marigold-depth-v1-1"
+  denoise_steps: 1
+  ensemble_size: 1
+  half_precision: False
+  processing_res: 640
+  output_processing_res: False
+  resample_method: bilinear
+  # seed: None
+  color_map: Spectral
+
+eval_depth:
+  metric_names: 
+    - 'Abs Rel'
+    - 'delta < 1.25'
+    - 'delta < 1.25^2'
+    - 'delta < 1.25^3'
+  depth_alignment: "lstsq"
+
+vis_depth: False
+save_dir: debug_image_diode
