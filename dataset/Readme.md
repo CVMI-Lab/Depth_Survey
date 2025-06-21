@@ -8,6 +8,8 @@ We support the evaluation using [MoGe]() benchmark and [Marigold]() benchmark.
 Please follow [MoGe](https://github.com/microsoft/MoGe/blob/main/docs/eval.md) to download and unzip the data.
 
 
+You can use [`gen_config.py`](../configs/moge_benchmark/gen_config.py) to generate config yamls of different datasets for one method conveniently.
+
 #### Marigold Benchmark
 To be done.
 

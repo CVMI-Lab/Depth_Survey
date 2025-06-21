@@ -26,7 +26,7 @@ class UniDepth:
     def prepare_output(self, predictions, data):
         depth = predictions["depth"]
         output = {
-            'pred_depth': depth[0,0].cpu().numpy(),  # [1, H, W]
+            'pred_depth': depth[0,0].cpu().numpy(),  # [H, W]
         }
         return output
     

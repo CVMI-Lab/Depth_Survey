@@ -31,9 +31,6 @@ if __name__ == "__main__":
         for data_idx in range(len(eval_data_pipe)):
             data = eval_data_pipe.get()
 
-            if data_idx >= 100:
-                break
-
             seq = f"{data_idx:03d}_{data['seq_name']}"
             print("processing seq:", seq)
 

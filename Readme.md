@@ -57,6 +57,8 @@ Finally, the evaluation process can be performed by
     python eval.py configs/moge_benchmark/marigold/marigold_nyuv2.yaml
   ```
 
+You can also use `eval_all.sh` to evaluate all datasets with one command.
+
 ### Supported Datasets
 Please refer to [dataset](./dataset/Readme.md) for more details.
 
