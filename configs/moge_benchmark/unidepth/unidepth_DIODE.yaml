@@ -1,9 +1,10 @@
-dataset: NYUv2
+dataset: DIODE
 dataset_params:
-  path: /mnt/pfs/data/RGBD/moge_eval//NYUv2
-  width: 640
-  height: 480
+  path: /mnt/pfs/data/RGBD/moge_eval//DIODE
+  width: 1024
+  height: 768
   split: .index.txt
+  include_segmentation: true
   depth_unit: 1.0
 model_name: UniDepth
 model_params:
@@ -17,4 +18,4 @@ eval_depth:
   - delta < 1.25^3
   metric_scale: true
 vis_depth: false
-save_dir: eval_unidepth_NYUv2
+save_dir: eval_unidepth_DIODE

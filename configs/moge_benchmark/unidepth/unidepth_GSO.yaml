@@ -1,10 +1,9 @@
-dataset: NYUv2
+dataset: GSO
 dataset_params:
-  path: /mnt/pfs/data/RGBD/moge_eval//NYUv2
-  width: 640
-  height: 480
+  path: /mnt/pfs/data/RGBD/moge_eval//GSO
+  width: 512
+  height: 512
   split: .index.txt
-  depth_unit: 1.0
 model_name: UniDepth
 model_params:
   model_dir: /mnt/pfs/users/sunyangtian/Depth/UniDepth
@@ -17,4 +16,4 @@ eval_depth:
   - delta < 1.25^3
   metric_scale: true
 vis_depth: false
-save_dir: eval_unidepth_NYUv2
+save_dir: eval_unidepth_GSO

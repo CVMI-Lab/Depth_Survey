@@ -1,10 +1,11 @@
-dataset: NYUv2
+dataset: HAMMER
 dataset_params:
-  path: /mnt/pfs/data/RGBD/moge_eval//NYUv2
-  width: 640
-  height: 480
+  path: /mnt/pfs/data/RGBD/moge_eval//HAMMER
+  width: 1664
+  height: 832
   split: .index.txt
-  depth_unit: 1.0
+  depth_unit: 1
+  has_sharp_boundary: true
 model_name: UniDepth
 model_params:
   model_dir: /mnt/pfs/users/sunyangtian/Depth/UniDepth
@@ -17,4 +18,4 @@ eval_depth:
   - delta < 1.25^3
   metric_scale: true
 vis_depth: false
-save_dir: eval_unidepth_NYUv2
+save_dir: eval_unidepth_HAMMER
