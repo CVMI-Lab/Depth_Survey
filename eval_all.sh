@@ -14,8 +14,7 @@ if [ ! -d "$CONFIG_DIR" ]; then
     exit 1
 fi
 
-DATASETS=("GSO" "HAMMER" "iBims-1" "KITTI" "NYUv2" "Sintel" "Spring")
-# DATASETS=("DDAD" "DIODE" "ETH3D" "GSO" "HAMMER" "iBims-1" "KITTI" "NYUv2" "Sintel" "Spring")
+DATASETS=("DDAD" "DIODE" "ETH3D" "GSO" "HAMMER" "iBims-1" "KITTI" "NYUv2" "Sintel" "Spring")
 
 for DATASET in "${DATASETS[@]}"; do
     CONFIG_FILE="${METHOD_NAME}_${DATASET}.yaml"

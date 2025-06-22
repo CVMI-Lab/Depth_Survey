@@ -1,0 +1,22 @@
+dataset: DIODE
+dataset_params:
+  path: /mnt/pfs/data/RGBD/moge_eval//DIODE
+  width: 1024
+  height: 768
+  split: .index.txt
+  include_segmentation: true
+  depth_unit: 1.0
+model_name: UniDepth
+model_params:
+  model_dir: /mnt/pfs/users/sunyangtian/Depth/UniDepth
+  ckpt_path: /mnt/pfs/share/pretrained_model/unidepth-v1-vitl14
+eval_depth:
+  metric_names:
+  - Abs Rel
+  - delta < 1.25
+  - delta < 1.25^2
+  - delta < 1.25^3
+  metric_scale: false
+  depth_alignment: scale
+vis_depth: false
+save_dir: eval_unidepth-scale_DIODE

@@ -42,7 +42,8 @@ if __name__ == "__main__":
 
             ### depth
             if 'eval_depth' in config:
-                res = depth_evaluation_wrap(predicted_depth_original=output["pred_depth"], ground_truth_depth_original=data['depth'], custom_mask=data['depth_mask'], **config["eval_depth"])
+                pred_depth = output["pred_disp"] if config["eval_depth"].get("disp_input", False) else output["pred_depth"]
+                res = depth_evaluation_wrap(predicted_depth_original=pred_depth, ground_truth_depth_original=data['depth'], custom_mask=data['depth_mask'], **config["eval_depth"])
                 print(res[0])
                 metric.update(res[0])
 

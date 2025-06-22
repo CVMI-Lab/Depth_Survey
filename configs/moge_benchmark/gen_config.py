@@ -30,7 +30,7 @@ def generate_yaml_config(method_name, dataset_name, dataset_info, output_dir):
             ],
             'depth_alignment': 'lstsq',
             'metric_scale': False,
-            'disp_input': True
+            'disp_input': False
         },
 
 
@@ -48,7 +48,7 @@ def generate_yaml_config(method_name, dataset_name, dataset_info, output_dir):
 
 def main():
     json_file_path = 'all_benchmarks.json'
-    method_name = 'depthanythingv2'
+    method_name = 'depthanythingv2-depth-align'
     output_dir = f'{method_name}'
     data_dir = '/mnt/pfs/data/RGBD/moge_eval/'
     

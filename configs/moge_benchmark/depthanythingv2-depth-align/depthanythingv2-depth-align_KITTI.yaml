@@ -1,0 +1,23 @@
+dataset: KITTI
+dataset_params:
+  path: /mnt/pfs/data/RGBD/moge_eval//KITTI
+  width: 750
+  height: 375
+  split: .index.txt
+  depth_unit: 1
+model_name: DepthAnythingV2
+model_params:
+  model_dir: /mnt/pfs/users/sunyangtian/Depth/Depth-Anything-V2
+  ckpt_path: /mnt/pfs/share/pretrained_model/depth_anything_v2_vitl.pth
+  encoder: vitl
+eval_depth:
+  metric_names:
+  - Abs Rel
+  - delta < 1.25
+  - delta < 1.25^2
+  - delta < 1.25^3
+  depth_alignment: lstsq
+  metric_scale: false
+  disp_input: false
+vis_depth: false
+save_dir: eval_depthanythingv2-depth-align_KITTI

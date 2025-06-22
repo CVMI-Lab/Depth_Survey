@@ -31,9 +31,14 @@ class DepthAnythingV2:
         rgb_int = np.moveaxis(rgb_int, 0, -1)  # [H, W, 3]
         return rgb_int
     
-    def prepare_output(self, depth, data):
+    def prepare_output(self, pred, data):
+        disp = pred/pred.max()
+        depth = 1 / (disp + 0.1)
+        depth = (depth - depth.min()) / (depth.max() - depth.min())  # normalize to [0, 1]
+
         output = {
-            'pred_depth': depth, # [H, W]
+            'pred_disp': disp,  # [H, W],
+            'pred_depth': depth # [H, W]
         }
         return output
 
