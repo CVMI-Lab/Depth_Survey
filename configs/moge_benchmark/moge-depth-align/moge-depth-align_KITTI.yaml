@@ -1,0 +1,23 @@
+dataset: KITTI
+dataset_params:
+  path: /home/muxin/Depth_Project/Depth_Survey/dataset/eval/KITTI
+  width: 750
+  height: 375
+  split: .index.txt
+  depth_unit: 1
+model_name: MoGe
+model_params:
+  model_dir: /home/muxin/Depth_Project/MoGe
+  ckpt_path: /home/muxin/Depth_Project/MoGe/checkpoints/moge-vitl.pt
+  encoder: vitl
+eval_depth:
+  metric_names:
+  - Abs Rel
+  - delta < 1.25
+  - delta < 1.25^2
+  - delta < 1.25^3
+  depth_alignment: lstsq
+  metric_scale: false
+  disp_input: false
+vis_depth: false
+save_dir: eval_moge-depth-align_KITTI

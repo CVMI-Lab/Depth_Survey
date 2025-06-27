@@ -1,0 +1,24 @@
+dataset: HAMMER
+dataset_params:
+  path: /home/muxin/Depth_Project/Depth_Survey/dataset/eval/HAMMER
+  width: 1664
+  height: 832
+  split: .index.txt
+  depth_unit: 1
+  has_sharp_boundary: true
+model_name: DepthPro
+model_params:
+  model_dir: /home/muxin/Depth_Project/ml-depth-pro
+  ckpt_path: /home/muxin/Depth_Project/ml-depth-pro/checkpoints/depth_pro.pt
+  encoder: vitl
+eval_depth:
+  metric_names:
+  - Abs Rel
+  - delta < 1.25
+  - delta < 1.25^2
+  - delta < 1.25^3
+  depth_alignment: lstsq
+  metric_scale: true
+  disp_input: false
+vis_depth: false
+save_dir: eval_depthpro-metric_HAMMER
