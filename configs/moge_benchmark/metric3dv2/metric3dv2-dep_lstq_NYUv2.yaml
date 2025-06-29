@@ -1,0 +1,20 @@
+dataset: NYUv2
+dataset_params:
+  path: /mnt/sda/hyh/data//eval/NYUv2
+  width: 640
+  height: 480
+  split: .index.txt
+  depth_unit: 1.0
+model_name: Metric3Dv2
+eval_depth:
+  metric_names:
+  - Abs Rel
+  - delta < 1.25
+  - delta < 1.25^2
+  - delta < 1.25^3
+  disp_input: false
+vis_depth: false
+save_dir: results/metric3dv2/eval_metric3dv2-dep_lstq_NYUv2
+metric_scale: true
+model_params:
+  pseudo_arg: placeholder
