@@ -15,7 +15,9 @@ eval_depth:
   disp_input: false
 vis_depth: false
 save_dir: results/genpercept/eval_genpercept-dep_lstq_GSO
-metric_scale: true
+metric_scale: false
+depth_alignment: lstsq
+disp_input: false
 model_params:
   model_dir: /mnt/sda/hyh/depth/GenPercept
   pretrained_path: /mnt/sda/hyh/depth/GenPercept/pretrained_weights/stable-diffusion-2-1

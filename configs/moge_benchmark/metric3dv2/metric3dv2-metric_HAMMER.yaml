@@ -15,8 +15,6 @@ eval_depth:
   disp_input: false
 vis_depth: false
 save_dir: results/metric3dv2/eval_metric3dv2-metric_HAMMER
-metric_scale: false
-depth_alignment: lstsq
-disp_input: false
+metric_scale: true
 model_params:
   pseudo_arg: placeholder

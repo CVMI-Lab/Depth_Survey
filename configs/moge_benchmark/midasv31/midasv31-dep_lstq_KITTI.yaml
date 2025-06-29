@@ -15,7 +15,9 @@ eval_depth:
   disp_input: false
 vis_depth: false
 save_dir: results/midasv31/eval_midasv31-dep_lstq_KITTI
-metric_scale: true
+metric_scale: false
+depth_alignment: lstsq
+disp_input: false
 model_params:
   model_dir: /mnt/sda/hyh/depth/MiDaS
   model_ckpt_path: /mnt/sda/hyh/depth/MiDaS/ckpt/dpt_beit_large_512.pt
