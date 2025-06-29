@@ -1,0 +1,23 @@
+dataset: HAMMER
+dataset_params:
+  path: /mnt/sda/yzy/Depth_Survey/data/HAMMER
+  width: 1664
+  height: 832
+  split: .index.txt
+  depth_unit: 1
+  has_sharp_boundary: true
+model_name: DPT
+model_params:
+  model_dir: /mnt/sda/yzy/Git_Project/DPT
+  ckpt_path: /mnt/sda/yzy/Git_Project/pretrained/dpt_large-midas-2f21e586.pt
+eval_depth:
+  metric_names:
+  - Abs Rel
+  - delta < 1.25
+  - delta < 1.25^2
+  - delta < 1.25^3
+  depth_alignment: lstsq
+  metric_scale: false
+  disp_input: false
+vis_depth: false
+save_dir: eval_dpt-align_HAMMER
