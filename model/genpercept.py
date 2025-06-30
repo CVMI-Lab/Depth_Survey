@@ -93,7 +93,7 @@ class GenPercept:
 
         with torch.no_grad():
             pred_depth = self.model(
-                img_torch.to(self.device),
+                img_torch.to(self.device) * 255,
                 denoising_steps=1,
                 ensemble_size=1,
                 processing_res=None,

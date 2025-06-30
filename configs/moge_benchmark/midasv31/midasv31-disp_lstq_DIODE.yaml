@@ -12,12 +12,11 @@ eval_depth:
   - delta < 1.25
   - delta < 1.25^2
   - delta < 1.25^3
-  disp_input: false
+  disp_input: true
+  metric_scale: false
+  depth_alignment: lstsq
 vis_depth: false
 save_dir: results/midasv31/eval_midasv31-disp_lstq_DIODE
-metric_scale: false
-depth_alignment: lstsq
-disp_input: true
 model_params:
   model_dir: /mnt/sda/hyh/depth/MiDaS
   model_ckpt_path: /mnt/sda/hyh/depth/MiDaS/ckpt/dpt_beit_large_512.pt

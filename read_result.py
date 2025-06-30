@@ -1,10 +1,6 @@
 import os
 import csv
 
-# Set your method and metric here
-method = "midasv31"
-metric = "disp_lstq"
-
 
 TASKS = [
     ["Metric3Dv2", "metric"],

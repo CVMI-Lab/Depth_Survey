@@ -13,8 +13,9 @@ eval_depth:
   - delta < 1.25^2
   - delta < 1.25^3
   disp_input: false
+  metric_scale: true
+  depth_alignment: lstsq
 vis_depth: false
 save_dir: results/metric3dv2/eval_metric3dv2-metric_DDAD
-metric_scale: true
 model_params:
   pseudo_arg: placeholder

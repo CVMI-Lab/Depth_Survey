@@ -45,16 +45,18 @@ for task in TASKS:
         "save_dir": None
     }
 
-    if METRIC_NAME == 'dep_lstq':
-        yaml_template["metric_scale"] = True
-    elif METRIC_NAME == 'metric':
-        yaml_template["metric_scale"] = False
-        yaml_template["depth_alignment"] = "lstsq"
-        yaml_template["disp_input"] = False
+    if METRIC_NAME == 'metric':
+        yaml_template["eval_depth"]["metric_scale"] = True
+        yaml_template["eval_depth"]["depth_alignment"] = "lstsq"
+        yaml_template["eval_depth"]["disp_input"] = False
+    elif METRIC_NAME == 'dep_lstq':
+        yaml_template["eval_depth"]["metric_scale"] = False
+        yaml_template["eval_depth"]["depth_alignment"] = "lstsq"
+        yaml_template["eval_depth"]["disp_input"] = False
     elif METRIC_NAME == 'disp_lstq':
-        yaml_template["metric_scale"] = False
-        yaml_template["depth_alignment"] = "lstsq"
-        yaml_template["disp_input"] = True
+        yaml_template["eval_depth"]["metric_scale"] = False
+        yaml_template["eval_depth"]["depth_alignment"] = "lstsq"
+        yaml_template["eval_depth"]["disp_input"] = True
 
     if METHOD_NAME == "Metric3Dv2" or METHOD_NAME == "DiffE2EFT":
         # Specific parameters for Metric3Dv2
